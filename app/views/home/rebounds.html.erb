@@ -1,0 +1,10 @@
+<h1>Dribble Rebounds</h1>
+
+<a href="<%= "/shot/#{@shots[0]['rebound_source_id']}" unless @shots.nil? %>">Source</a>
+
+
+<% @shots.each do |shot| %>
+	<h2><%= shot["title"] %></h2>
+	<a href="<%= "/shot/#{shot["id"]}" %>"><img src="<%= shot["image_teaser_url"] %>" /></a><br />
+	<caption><%= shot["description"].html_safe unless shot["description"].nil? %><%= "#{shot["player"]["name"]} - #{shot["player"]["location"]}" unless shot["player"].nil? %></caption>
+<% end %>

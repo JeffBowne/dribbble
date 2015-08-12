@@ -1,0 +1,9 @@
+<h1><%= " #{@shot["title"]}" %></h1>
+
+<a href="<%= @shot["url"] %>"><img src="<%= @shot["image_url"] %>" /></a><br />
+<em>id:</em> <strong><%= @shot["id"] %></strong><br />
+<em><%= "like".pluralize @shot["likes_count"] %>:</em> <strong><%= @shot["likes_count"] %></strong><br />
+<em>author:</em> <strong><%= @shot["player"]["name"] %></strong><br />
+<em>location:</em> <strong><%= @shot["player"]["location"] %></strong><br />
+
+

@@ -1,0 +1,21 @@
+<style>
+.grid-item {
+	display:inline-block;
+	width:300px;
+	vertical-align:top;
+}
+</style>
+
+<h1>Dribble Shots</h1>
+
+<content class="grid">
+<% @shots.each do |shot| %>
+	<div class="grid-item">
+		<h2><%= shot["title"] %></h2>
+		<a href="<%= "/shot/#{shot["id"]}" %>"><img src="<%= shot["image_teaser_url"] %>" /></a><br />
+		<caption><%= shot["description"].html_safe unless shot["description"].nil? %><%= "#{shot["player"]["name"]} - #{shot["player"]["location"]}" unless shot["player"].nil? %></caption>
+	</div>
+<% end %>
+</content>
+
+<%= @shots[0].inspect %>
